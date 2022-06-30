@@ -1,5 +1,7 @@
 import ReactApexChart, { Props } from "react-apexcharts";
 import React from "react";
+import { DashboardContainer, IconContainer } from "../../style/CommunsStyle";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 
 
 const BarChart: React.FC<Props> = () => {
@@ -7,15 +9,23 @@ const BarChart: React.FC<Props> = () => {
         title: {
             text: 'Barras',
             style:{
-                fontSize: '18px'
+                fontSize: '18px', 
+                fontFamily: "'Inconsolata', monospace",
+                color: 'var(--color-primary)'
             }
         },
+      colors: ['var(--color-primary)', 'var(--color-secundary)'],
       chart: {
-        height: 250,
         zoom: {
           enabled: true,
         }
-      }
+      },
+      dataLabels: {
+        enabled: true,
+        style: {
+          colors: ['var(--color-gray)', 'var(--color-gray-secundary)'],
+        },
+      },
     };
   
     const series = [
@@ -30,13 +40,20 @@ const BarChart: React.FC<Props> = () => {
     ];
   
     return (
+      <DashboardContainer>
+      <IconContainer>
+      <IoMdInformationCircleOutline id="icon"/>
+
+      </IconContainer>
         <ReactApexChart
           type="bar"
           options={options}
           series={series}
           height={350}
-          width={450}
+          width={550}
         />
+        
+      </DashboardContainer>
     );
   };
 
