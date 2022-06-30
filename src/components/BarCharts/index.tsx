@@ -1,6 +1,6 @@
 import ReactApexChart, { Props } from "react-apexcharts";
 import React from "react";
-import { DashboardContainer, IconContainer } from "../../style/CommunsStyle";
+import { DashboardContainer, IconContainer, TooltipBox, TooltipCard, TooltipText } from "../../style/CommunsStyle";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 
 
@@ -23,7 +23,7 @@ const BarChart: React.FC<Props> = () => {
       dataLabels: {
         enabled: true,
         style: {
-          colors: ['var(--color-gray)', 'var(--color-gray-secundary)'],
+          colors: ['var(--color-bg)', 'var(--color-gray)'],
         },
       },
     };
@@ -41,10 +41,16 @@ const BarChart: React.FC<Props> = () => {
   
     return (
       <DashboardContainer>
-      <IconContainer>
-      <IoMdInformationCircleOutline id="icon"/>
-
-      </IconContainer>
+      <TooltipCard>
+          <TooltipText>
+            <IconContainer>
+              <IoMdInformationCircleOutline id="icon"/>
+            </IconContainer>
+          </TooltipText>
+          <TooltipBox>
+            <h5>Dashboard em Barras com dados de vendas totais e individuais</h5>
+          </TooltipBox>
+        </TooltipCard>
         <ReactApexChart
           type="bar"
           options={options}

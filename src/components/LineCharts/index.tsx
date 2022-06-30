@@ -1,6 +1,6 @@
 import ReactApexChart, { Props } from "react-apexcharts";
 import React from "react";
-import { DashboardContainer, IconContainer } from "../../style/CommunsStyle";
+import { DashboardContainer, IconContainer, TooltipBox, TooltipCard, TooltipText } from "../../style/CommunsStyle";
 import { IoMdInformationCircleOutline } from 'react-icons/io'
 
 
@@ -43,16 +43,23 @@ const series = [
   
     return (
       <DashboardContainer>
-        <IconContainer>
-        <IoMdInformationCircleOutline id="icon"/>
-
-        </IconContainer>
+        <TooltipCard>
+          <TooltipText>
+            <IconContainer>
+              <IoMdInformationCircleOutline id="icon"/>
+            </IconContainer>
+          </TooltipText>
+          <TooltipBox>
+            <h5>Dashboard em Linhas com dados de vendas totais e individuais</h5>
+          </TooltipBox>
+        </TooltipCard>
+        
         <ReactApexChart
           type="line"
           options={options}
           series={series}
-          height={350}
           width={550}
+          height={350}
         />
       </DashboardContainer>
     );

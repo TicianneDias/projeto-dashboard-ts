@@ -5,9 +5,9 @@ export default createGlobalStyle`
 
 :root {
     --color-white: #fff;
+    --color-bg: #F6F6F6;
     --color-dark: #101010f2;
     --color-dark-secundary: #071b1d,
-    --color-bg: #F6F6F6;
     --color-gray: #CEC6CE;
     --color-gray-secundary: #828282;
     --color-primary: #5D405C;
@@ -25,9 +25,9 @@ export default createGlobalStyle`
         font-family: 'Inconsolata', monospace;
     }
     
-    body {
-    background-color: var(--color-bg);
+    body{ 
+        background-color: var(--color-bg);
 
-}
+    }
 `;
 
