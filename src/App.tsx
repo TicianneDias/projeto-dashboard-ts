@@ -1,8 +1,11 @@
 import BarChart from './components/BarCharts';
 import NavBar from './components/NavBar';
-import PieChart from './components/LineCharts';
+import PieCharts from './components/PieCharts';
 import Global from './style/Global';
 import { AppContainer } from './style/CommunsStyle';
+import AreaCharts from './components/AreaCharts';
+import LineChart from './components/LineCharts';
+import LittleLineChart from './components/LittleLineChart';
 
 function App() {
   return (
@@ -11,8 +14,11 @@ function App() {
     <NavBar/>
     <AppContainer>
       <BarChart />
-      <PieChart />
+      <LineChart />
+      <AreaCharts/>
+      <PieCharts/>
     </AppContainer>
+      <LittleLineChart/>
     </>
   );
 }

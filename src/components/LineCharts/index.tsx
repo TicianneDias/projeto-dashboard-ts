@@ -2,6 +2,7 @@ import ReactApexChart, { Props } from "react-apexcharts";
 import React from "react";
 import { DashboardContainer, IconContainer, TooltipBox, TooltipCard, TooltipText } from "../../style/CommunsStyle";
 import { IoMdInformationCircleOutline } from 'react-icons/io'
+import {ApexWrapper} from './style'
 
 
 const LineChart: React.FC<Props> = () => {
@@ -20,6 +21,25 @@ const LineChart: React.FC<Props> = () => {
     zoom: {
       enabled: true,
     },
+      toolbar: {
+        show: true,
+        offsetX: 30,
+        offsetY: 350,
+        tools: {
+          download: true,
+          selection: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          customIcons: [{
+            icon: '🏠',
+            index: 4,
+            title: 'icon fofo',
+            class: 'icon-fofo'
+          }]
+        },
+    }
   },
   colors: ['var(--color-primary)', 'var(--color-secundary)'],
   dataLabels: {
@@ -53,7 +73,8 @@ const series = [
             <h5>Dashboard em Linhas com dados de vendas totais e individuais</h5>
           </TooltipBox>
         </TooltipCard>
-        
+        <ApexWrapper>
+
         <ReactApexChart
           type="line"
           options={options}
@@ -61,6 +82,8 @@ const series = [
           width={550}
           height={350}
         />
+        </ApexWrapper>
+        
       </DashboardContainer>
     );
   };

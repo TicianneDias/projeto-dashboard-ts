@@ -5,39 +5,38 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 
 
 const BarChart: React.FC<Props> = () => {
+  
     const options = {
         title: {
-            text: 'Barras',
+            text: 'Pie',
             style:{
                 fontSize: '18px', 
                 fontFamily: "'Inconsolata', monospace",
                 color: 'var(--color-primary)'
             }
         },
-      colors: ['var(--color-primary)', 'var(--color-secundary)'],
-      chart: {
-        zoom: {
-          enabled: true,
-        }
-      },
-      dataLabels: {
-        enabled: true,
-        style: {
-          colors: ['var(--color-bg)', 'var(--color-secundary-light)'],
+        colors: ['var(--color-primary)', 'var(--color-secundary)'],
+        labels: ['Total de vendas', 'Minhas vendas'],
+        options: {
+          chart: {
+            width: 380,
+            type: 'pie',
+          },
+          responsive: [{
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200
+              },
+              legend: {
+                position: 'bottom'
+              }
+            }
+          }]
         },
-      },
     };
   
-    const series = [
-      {
-        name: "Total de vendas",
-        data: [31, 40, 58, 51, 42, 79, 100]
-      },
-      {
-        name: "Minhas vendas",
-        data: [11, 32, 45, 32, 34, 32, 41]
-      }
-    ];
+    const series = [401, 257]
   
     return (
       <DashboardContainer>
@@ -48,11 +47,11 @@ const BarChart: React.FC<Props> = () => {
             </IconContainer>
           </TooltipText>
           <TooltipBox>
-            <h5>Dashboard em Barras com dados de vendas totais e individuais</h5>
+            <h5>Dashboard em Pie com porcentagens de vendas totais e individuais</h5>
           </TooltipBox>
         </TooltipCard>
         <ReactApexChart
-          type="bar"
+          type="pie"
           options={options}
           series={series}
           height={350}

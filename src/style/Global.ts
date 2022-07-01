@@ -10,9 +10,9 @@ export default createGlobalStyle`
     --color-dark-secundary: #071b1d,
     --color-gray: #CEC6CE;
     --color-gray-secundary: #828282;
-    --color-primary: #5D405C;
-    --color-secundary: #8CD574;
-    --color-secundary-light: #a9f391;
+    --color-primary: #9F040C;
+    --color-secundary: #10244F;
+    --color-secundary-light: #3D5BB9;
     --color-blue: #26A0FC;
     --color-green: #26E7A6;
     --color-yellow: #FEBC3B;
@@ -29,5 +29,22 @@ export default createGlobalStyle`
         background-color: var(--color-bg);
 
     }
+
+    ::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+
+  &:hover {
+    background: var(--color-secundary-light); 
+  }
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+}
+
 `;
 

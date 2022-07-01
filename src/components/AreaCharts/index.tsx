@@ -4,10 +4,10 @@ import { DashboardContainer, IconContainer, TooltipBox, TooltipCard, TooltipText
 import { IoMdInformationCircleOutline } from "react-icons/io";
 
 
-const BarChart: React.FC<Props> = () => {
+const AreaCharts: React.FC<Props> = () => {
     const options = {
         title: {
-            text: 'Barras',
+            text: 'Áreas',
             style:{
                 fontSize: '18px', 
                 fontFamily: "'Inconsolata', monospace",
@@ -16,14 +16,15 @@ const BarChart: React.FC<Props> = () => {
         },
       colors: ['var(--color-primary)', 'var(--color-secundary)'],
       chart: {
+        toolbar: false,
         zoom: {
           enabled: true,
         }
       },
       dataLabels: {
-        enabled: true,
+        enabled: false,
         style: {
-          colors: ['var(--color-bg)', 'var(--color-secundary-light)'],
+          colors: ['var(--color-primary)', 'var(--color-secundary-light)'],
         },
       },
     };
@@ -48,11 +49,11 @@ const BarChart: React.FC<Props> = () => {
             </IconContainer>
           </TooltipText>
           <TooltipBox>
-            <h5>Dashboard em Barras com dados de vendas totais e individuais</h5>
+            <h5>Dashboard em Áreas com dados de vendas totais e individuais</h5>
           </TooltipBox>
         </TooltipCard>
         <ReactApexChart
-          type="bar"
+          type="area"
           options={options}
           series={series}
           height={350}
@@ -63,4 +64,4 @@ const BarChart: React.FC<Props> = () => {
     );
   };
 
-  export default BarChart
+  export default AreaCharts
