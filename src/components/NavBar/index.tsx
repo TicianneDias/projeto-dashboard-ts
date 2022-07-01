@@ -1,13 +1,8 @@
-import React from 'react'
-import { NavContainer } from './style'
+import React from 'react';
+import { NavContainer } from './style';
 
 const NavBar = () => {
-  return (
-    <NavContainer>
-        
+  return <NavContainer></NavContainer>;
+};
 
-    </NavContainer>
-  )
-}
-
-export default NavBar
+export default NavBar;

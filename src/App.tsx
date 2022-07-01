@@ -7,12 +7,12 @@ import { AppContainer } from './style/CommunsStyle';
 function App() {
   return (
     <>
-    <Global/>
-    <NavBar/>
-    <AppContainer>
-      <BarChart />
-      <PieChart />
-    </AppContainer>
+      <Global />
+      <NavBar />
+      <AppContainer>
+        <BarChart />
+        <PieChart />
+      </AppContainer>
     </>
   );
 }
