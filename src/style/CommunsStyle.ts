@@ -23,6 +23,10 @@ export const DashboardContainer = styled.div`
         margin-bottom: 50px;
     }
 
+    @media(max-width: 612px) {
+        width: auto;
+    }
+
     `;
 
 
@@ -39,6 +43,10 @@ export const IconContainer = styled.div`
         &:hover {
             color: var(--color-blue);
         }
+    }
+
+    @media(max-width: 612px) {
+        right: 70px;
     }
 `;
 

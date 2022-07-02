@@ -1,26 +1,40 @@
-import ReactApexChart, { Props } from "react-apexcharts";
-import React from "react";
-import { DashboardContainer, IconContainer, TooltipBox, TooltipCard, TooltipText } from "../../style/CommunsStyle";
-import { IoMdInformationCircleOutline } from 'react-icons/io'
-import {ApexWrapper} from './style'
-
+import ReactApexChart, { Props } from 'react-apexcharts';
+import React from 'react';
+import {
+  DashboardContainer,
+  IconContainer,
+  TooltipBox,
+  TooltipCard,
+  TooltipText
+} from '../../style/CommunsStyle';
+import { IoMdInformationCircleOutline } from 'react-icons/io';
+import { ApexWrapper } from './style';
 
 const LineChart: React.FC<Props> = () => {
-
   const options = {
     title: {
-        text: `Linhas`,
-        style:{
-            fontSize: '18px',
-            fontFamily: "'Inconsolata', monospace",
-            color: 'var(--color-primary)'
+      text: `Linhas`,
+      style: {
+        fontSize: '18px',
+        fontFamily: "'Inconsolata', monospace",
+        color: 'var(--color-primary)'
+      }
+    },
+    responsive: [{
+      breakpoint: 612,
+      options: {
+        chart: {
+          width: '100%',
+
         }
-    },
-  chart: {
-    height: 250,
-    zoom: {
-      enabled: true,
-    },
+      }
+    }],
+    chart: {
+      width: '100%',
+      height: 250,
+      zoom: {
+        enabled: true
+      },
       toolbar: {
         show: true,
         offsetX: 30,
@@ -32,49 +46,50 @@ const LineChart: React.FC<Props> = () => {
           zoomin: true,
           zoomout: true,
           pan: true,
-          customIcons: [{
-            icon: '🏠',
-            index: 4,
-            title: 'icon fofo',
-            class: 'icon-fofo'
-          }]
-        },
-    }
-  },
-  colors: ['var(--color-primary)', 'var(--color-secundary)'],
-  dataLabels: {
-    enabled: true,
-    style: {
-      // colors: ['var(--color-gray-secundary)', 'var(--color-secundary-light)'],
+          customIcons: [
+            {
+              icon: '🏠',
+              index: 4,
+              title: 'icon fofo',
+              class: 'icon-fofo'
+            }
+          ]
+        }
+      }
     },
-  },
-};
+    colors: ['var(--color-primary)', 'var(--color-secundary)'],
+    dataLabels: {
+      enabled: true,
+      style: {
+        // colors: ['var(--color-gray-secundary)', 'var(--color-secundary-light)'],
+      }
+    }
+  };
 
-const series = [
-  {
-    name: "Total de vendas",
-    data: [31, 40, 58, 51, 42, 79, 100]
-  },
-  {
-    name: "Minhas vendas",
-    data: [11, 32, 45, 32, 34, 32, 41]
-  }
-];
-  
-    return (
-      <DashboardContainer>
-        <TooltipCard>
-          <TooltipText>
-            <IconContainer>
-              <IoMdInformationCircleOutline id="icon"/>
-            </IconContainer>
-          </TooltipText>
-          <TooltipBox>
-            <h5>Dashboard em Linhas com dados de vendas totais e individuais</h5>
-          </TooltipBox>
-        </TooltipCard>
-        <ApexWrapper>
+  const series = [
+    {
+      name: 'Total de vendas',
+      data: [31, 40, 58, 51, 42, 79, 100]
+    },
+    {
+      name: 'Minhas vendas',
+      data: [11, 32, 45, 32, 34, 32, 41]
+    }
+  ];
 
+  return (
+    <DashboardContainer>
+      <TooltipCard>
+        <TooltipText>
+          <IconContainer>
+            <IoMdInformationCircleOutline id="icon" />
+          </IconContainer>
+        </TooltipText>
+        <TooltipBox>
+          <h5>Dashboard em Linhas com dados de vendas totais e individuais</h5>
+        </TooltipBox>
+      </TooltipCard>
+      <ApexWrapper>
         <ReactApexChart
           type="line"
           options={options}
@@ -82,10 +97,9 @@ const series = [
           width={550}
           height={350}
         />
-        </ApexWrapper>
-        
-      </DashboardContainer>
-    );
-  };
+      </ApexWrapper>
+    </DashboardContainer>
+  );
+};
 
-  export default LineChart
+export default LineChart;

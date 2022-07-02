@@ -32,6 +32,10 @@ export default createGlobalStyle`
 
     ::-webkit-scrollbar {
   width: 8px;
+
+  &:hover {
+    width: 11px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -44,6 +48,7 @@ export default createGlobalStyle`
  
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary);
+  border-radius: 100px;
 }
 
 `;

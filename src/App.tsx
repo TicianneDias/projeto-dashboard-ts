@@ -10,15 +10,15 @@ import LittleLineChart from './components/LittleLineChart';
 function App() {
   return (
     <>
-    <Global/>
-    <NavBar/>
-    <AppContainer>
-      <BarChart />
-      <LineChart />
-      <AreaCharts/>
-      <PieCharts/>
-    </AppContainer>
-      <LittleLineChart/>
+      <Global />
+      <NavBar />
+      <AppContainer>
+        <BarChart />
+        <LineChart />
+        <AreaCharts />
+        <PieCharts />
+      </AppContainer>
+      <LittleLineChart />
     </>
   );
 }
