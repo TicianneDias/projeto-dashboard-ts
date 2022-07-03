@@ -21,7 +21,10 @@ const MixedContainer = () => {
             <IoMdInformationCircleOutline id="icon" />
           </TooltipText>
           <TooltipBoxMixedContainer>
-            <h5>Dados sobre progresso individual acompanhando porcentagens de vendas</h5>
+            <h5>
+              Dados sobre progresso individual acompanhando porcentagens de
+              vendas
+            </h5>
           </TooltipBoxMixedContainer>
         </TooltipCard>
       </TitleContainer>
