@@ -8,7 +8,6 @@ import {
   TooltipText
 } from '../../style/CommunsStyle';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
-// import { ApexWrapper } from './style';
 
 const LineChart: React.FC<Props> = () => {
   const options = {
@@ -20,17 +19,18 @@ const LineChart: React.FC<Props> = () => {
         color: 'var(--color-primary)'
       }
     },
-    responsive: [{
-      breakpoint: 612,
-      options: {
-        chart: {
-          width: '100%',
-
+    responsive: [
+      {
+        breakpoint: 612,
+        options: {
+          chart: {
+            width: '100%'
+          }
         }
       }
-    }],
+    ],
     xaxis: {
-      categories: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul']
+      categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul']
     },
     chart: {
       width: '100%',
@@ -41,15 +41,12 @@ const LineChart: React.FC<Props> = () => {
       toolbar: {
         show: true,
         offsetX: 20,
-        offsetY: 350,
+        offsetY: 350
       }
     },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
     dataLabels: {
-      enabled: true,
-      style: {
-        // colors: ['var(--color-gray-secundary)', 'var(--color-secundary-light)'],
-      }
+      enabled: true
     }
   };
 
@@ -76,15 +73,13 @@ const LineChart: React.FC<Props> = () => {
           <h5>Dashboard em Linhas com dados de vendas totais e individuais</h5>
         </TooltipBox>
       </TooltipCard>
-      {/* <ApexWrapper> */}
-        <ReactApexChart
-          type="line"
-          options={options}
-          series={series}
-          width={550}
-          height={350}
-        />
-      {/* </ApexWrapper> */}
+      <ReactApexChart
+        type="line"
+        options={options}
+        series={series}
+        width={550}
+        height={350}
+      />
     </DashboardContainer>
   );
 };

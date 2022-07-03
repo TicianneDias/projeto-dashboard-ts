@@ -1,24 +1,8 @@
 import ReactApexChart, { Props } from 'react-apexcharts';
 import React from 'react';
-import {
-  DashboardContainer,
-  IconContainer,
-  TooltipBox,
-  TooltipCard,
-  TooltipText
-} from '../../style/CommunsStyle';
-import { IoMdInformationCircleOutline } from 'react-icons/io';
 
 const PieChart: React.FC<Props> = () => {
   const options = {
-    // title: {
-    //   text: 'Pie',
-    //   style: {
-    //     fontSize: '18px',
-    //     fontFamily: "'Inconsolata', monospace",
-    //     color: 'var(--color-primary)'
-    //   }
-    // },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
     labels: ['Total de vendas', 'Minhas vendas'],
     options: {

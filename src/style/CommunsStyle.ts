@@ -15,7 +15,6 @@ export const DashboardContainer = styled.div`
     background-color: var(--color-white);
     box-shadow: 2px 2px 2px var(--color-gray-secundary);
     border-radius: 20px;
-    /* border: 0.3px solid var(--color-dark); */
 
     @media(max-width: 1208px) {
         width: 550px;

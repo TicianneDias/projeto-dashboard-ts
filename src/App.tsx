@@ -18,7 +18,7 @@ function App() {
       <AppContainer>
         <BarChart />
         <LineChart />
-      <MixedContainer />
+        <MixedContainer />
       </AppContainer>
     </>
   );

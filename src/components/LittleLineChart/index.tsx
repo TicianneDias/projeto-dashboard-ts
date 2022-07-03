@@ -1,10 +1,11 @@
 import ReactApexChart, { Props } from 'react-apexcharts';
 import React from 'react';
-import { SmallDashboardContainer } from '../../style/CommunsStyle';
 
 const LittleLineChart: React.FC<Props> = () => {
   const options = {
-    toolbar: false,
+    toolbar: {
+      show: false
+    },
     chart: {
       height: 50,
       sparkline: {
@@ -13,10 +14,7 @@ const LittleLineChart: React.FC<Props> = () => {
     },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
     dataLabels: {
-      enabled: false,
-      style: {
-        // colors: ['var(--color-gray-secundary)', 'var(--color-secundary-light)'],
-      }
+      enabled: false
     }
   };
 
@@ -28,13 +26,13 @@ const LittleLineChart: React.FC<Props> = () => {
   ];
 
   return (
-      <ReactApexChart
-        type="line"
-        options={options}
-        series={series}
-        width={100}
-        height={80}
-      />
+    <ReactApexChart
+      type="line"
+      options={options}
+      series={series}
+      width={100}
+      height={80}
+    />
   );
 };
 

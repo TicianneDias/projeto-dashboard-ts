@@ -26,7 +26,7 @@ const BarChart: React.FC<Props> = () => {
         enabled: true
       },
       toolbar: {
-        show: false,
+        show: false
       }
     },
     dataLabels: {
@@ -36,17 +36,18 @@ const BarChart: React.FC<Props> = () => {
       }
     },
     xaxis: {
-      categories: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul']
+      categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul']
     },
-    responsive: [{
-      breakpoint: 612,
-      options: {
-        chart: {
-          width: '100%',
-
+    responsive: [
+      {
+        breakpoint: 612,
+        options: {
+          chart: {
+            width: '100%'
+          }
         }
       }
-    }],
+    ]
   };
 
   const series = [
