@@ -9,31 +9,31 @@ import {
 } from '../../style/CommunsStyle';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 
-const BarChart: React.FC<Props> = () => {
+const RadarChart: React.FC<Props> = () => {
   const options = {
-    title: {
-      text: 'Barras',
-      style: {
-        fontSize: '18px',
-        fontFamily: "'Inconsolata', monospace",
-        color: 'var(--color-primary)'
-      }
-    },
+    // title: {
+    //   text: 'Radar',
+    //   style: {
+    //     fontSize: '18px',
+    //     fontFamily: "'Inconsolata', monospace",
+    //     color: 'var(--color-primary)'
+    //   }
+    // },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
+    fill: {
+      colors: ["#9f040c6f", "#10244f7a"],
+    },
     chart: {
       width: '100%',
-      zoom: {
-        enabled: true
+      dropShadow: {
+        enabled: true,
+        blur: 4,
+        left: 7,
+        top: 7
       },
-      toolbar: {
-        show: false,
-      }
     },
-    dataLabels: {
-      enabled: true,
-      style: {
-        colors: ['var(--color-bg)', 'var(--color-secundary-light)']
-      }
+    markers: {
+      size: 0.7
     },
     xaxis: {
       categories: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul']
@@ -43,7 +43,6 @@ const BarChart: React.FC<Props> = () => {
       options: {
         chart: {
           width: '100%',
-
         }
       }
     }],
@@ -61,26 +60,14 @@ const BarChart: React.FC<Props> = () => {
   ];
 
   return (
-    <DashboardContainer>
-      <TooltipCard>
-        <TooltipText>
-          <IconContainer>
-            <IoMdInformationCircleOutline id="icon" />
-          </IconContainer>
-        </TooltipText>
-        <TooltipBox>
-          <h5>Dashboard em Barras com dados de vendas totais e individuais</h5>
-        </TooltipBox>
-      </TooltipCard>
       <ReactApexChart
-        type="bar"
+        type="radar"
         options={options}
         series={series}
         height={350}
         width={550}
       />
-    </DashboardContainer>
   );
 };
 
-export default BarChart;
+export default RadarChart;

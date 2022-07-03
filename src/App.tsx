@@ -6,19 +6,20 @@ import { AppContainer } from './style/CommunsStyle';
 import AreaCharts from './components/AreaCharts';
 import LineChart from './components/LineCharts';
 import LittleLineChart from './components/LittleLineChart';
+import RadarChart from './components/RadarCharts';
+import MixedContainer from './components/MixedContainer';
 
 function App() {
   return (
     <>
       <Global />
       <NavBar />
+      <AreaCharts />
       <AppContainer>
         <BarChart />
         <LineChart />
-        <AreaCharts />
-        <PieCharts />
+      <MixedContainer />
       </AppContainer>
-      <LittleLineChart />
     </>
   );
 }

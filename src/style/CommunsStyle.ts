@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { TooltipBoxBigDashboard } from '../components/AreaCharts/style';
+import { TooltipBoxMixedContainer } from '../components/MixedContainer/style';
 
 export const DashboardContainer = styled.div`
     display: flex;
@@ -48,7 +50,10 @@ export const IconContainer = styled.div`
     @media(max-width: 612px) {
         right: 70px;
     }
+
+    
 `;
+
 
 export const AppContainer = styled.div`
     display: flex;
@@ -76,10 +81,12 @@ export const TooltipBox = styled.div`
   padding: 5px;
   border-radius: 4px;
   transition: all 1ms ease-in-out;
+
+  
   &:before {
-    left: 40px;
-    top: -10px;
-    position: absolute;
+      left: 40px;
+      top: -10px;
+      position: absolute;
   }
 
   @media(max-width: 612px) {
@@ -88,9 +95,12 @@ export const TooltipBox = styled.div`
     }
 `;
 
+
 export const TooltipCard = styled.div`
   position: relative;
-  & ${TooltipText}:hover + ${TooltipBox} {
+  & ${TooltipText}:hover + ${TooltipBox},  
+  & ${TooltipText}:hover + ${TooltipBoxBigDashboard},
+  & ${TooltipText}:hover + ${TooltipBoxMixedContainer}{
     visibility: visible;
     background-color: var(--color-white);
     border: 1px solid var(--color-primary);
@@ -116,3 +126,4 @@ export const SmallDashboardContainer = styled.div`
     box-shadow: 2px 2px 2px var(--color-gray-secundary);
     border-radius: 20px;
 `;
+

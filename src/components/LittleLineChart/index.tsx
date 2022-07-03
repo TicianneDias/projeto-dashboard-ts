@@ -28,7 +28,6 @@ const LittleLineChart: React.FC<Props> = () => {
   ];
 
   return (
-    <SmallDashboardContainer>
       <ReactApexChart
         type="line"
         options={options}
@@ -36,7 +35,6 @@ const LittleLineChart: React.FC<Props> = () => {
         width={100}
         height={80}
       />
-    </SmallDashboardContainer>
   );
 };
 
