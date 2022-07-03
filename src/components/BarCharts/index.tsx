@@ -26,17 +26,7 @@ const BarChart: React.FC<Props> = () => {
         enabled: true
       },
       toolbar: {
-        show: true,
-        offsetX: 20,
-        offsetY: 350,
-        tools: {
-          download: true,
-          selection: true,
-          zoom: true,
-          zoomin: true,
-          zoomout: true,
-          pan: true,
-        }
+        show: false,
       }
     },
     dataLabels: {

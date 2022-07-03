@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { TooltipBoxBigDashboard } from '../components/AreaCharts/style';
+import { TooltipBoxMixedContainer } from '../components/MixedContainer/style';
 
 export const DashboardContainer = styled.div`
     display: flex;
@@ -98,7 +99,8 @@ export const TooltipBox = styled.div`
 export const TooltipCard = styled.div`
   position: relative;
   & ${TooltipText}:hover + ${TooltipBox},  
-  & ${TooltipText}:hover + ${TooltipBoxBigDashboard}{
+  & ${TooltipText}:hover + ${TooltipBoxBigDashboard},
+  & ${TooltipText}:hover + ${TooltipBoxMixedContainer}{
     visibility: visible;
     background-color: var(--color-white);
     border: 1px solid var(--color-primary);

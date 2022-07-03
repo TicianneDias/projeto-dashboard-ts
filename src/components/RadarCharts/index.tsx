@@ -11,14 +11,14 @@ import { IoMdInformationCircleOutline } from 'react-icons/io';
 
 const RadarChart: React.FC<Props> = () => {
   const options = {
-    title: {
-      text: 'Radar',
-      style: {
-        fontSize: '18px',
-        fontFamily: "'Inconsolata', monospace",
-        color: 'var(--color-primary)'
-      }
-    },
+    // title: {
+    //   text: 'Radar',
+    //   style: {
+    //     fontSize: '18px',
+    //     fontFamily: "'Inconsolata', monospace",
+    //     color: 'var(--color-primary)'
+    //   }
+    // },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
     fill: {
       colors: ["#9f040c6f", "#10244f7a"],
@@ -43,7 +43,6 @@ const RadarChart: React.FC<Props> = () => {
       options: {
         chart: {
           width: '100%',
-
         }
       }
     }],
@@ -61,17 +60,6 @@ const RadarChart: React.FC<Props> = () => {
   ];
 
   return (
-    <DashboardContainer>
-      <TooltipCard>
-        <TooltipText>
-          <IconContainer>
-            <IoMdInformationCircleOutline id="icon" />
-          </IconContainer>
-        </TooltipText>
-        <TooltipBox>
-          <h5>Dashboard em Radar com dados de vendas totais e individuais</h5>
-        </TooltipBox>
-      </TooltipCard>
       <ReactApexChart
         type="radar"
         options={options}
@@ -79,7 +67,6 @@ const RadarChart: React.FC<Props> = () => {
         height={350}
         width={550}
       />
-    </DashboardContainer>
   );
 };
 
