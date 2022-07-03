@@ -13,9 +13,9 @@ function App() {
       <Global />
       <NavBar />
       <AppContainer>
+        <AreaCharts />
         <BarChart />
         <LineChart />
-        <AreaCharts />
         <PieCharts />
       </AppContainer>
       <LittleLineChart />

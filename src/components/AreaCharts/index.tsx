@@ -1,13 +1,12 @@
 import ReactApexChart, { Props } from 'react-apexcharts';
 import React from 'react';
-import {
-  DashboardContainer,
-  IconContainer,
-  TooltipBox,
-  TooltipCard,
-  TooltipText
-} from '../../style/CommunsStyle';
+import { TooltipCard, TooltipText } from '../../style/CommunsStyle';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
+import {
+  BigDashboardContainer,
+  IconBigContainer,
+  TooltipBoxBigDashboard
+} from './style';
 
 const AreaCharts: React.FC<Props> = () => {
   const options = {
@@ -20,20 +19,12 @@ const AreaCharts: React.FC<Props> = () => {
       }
     },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
-    responsive: [{
-      breakpoint: 612,
-      options: {
-        chart: {
-          width: '100%',
-
-        }
-      }
-    }],
     chart: {
       toolbar: {
-        show: false,
+        show: false
       },
-      width: '100%',
+      width: 1150,
+      height: 450,
       zoom: {
         enabled: true
       }
@@ -45,8 +36,46 @@ const AreaCharts: React.FC<Props> = () => {
       }
     },
     xaxis: {
-      categories: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul']
+      categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul']
     },
+    responsive: [
+      {
+        breakpoint: 1285,
+        options: {
+          chart: {
+            width: 800,
+            height: 450
+          }
+        }
+      },
+      {
+        breakpoint: 830,
+        options: {
+          chart: {
+            width: 600,
+            height: 450
+          }
+        }
+      },
+      {
+        breakpoint: 630,
+        options: {
+          chart: {
+            width: 500,
+            height: 450
+          }
+        }
+      },
+      {
+        breakpoint: 534,
+        options: {
+          chart: {
+            width: 350,
+            height: 450
+          }
+        }
+      }
+    ]
   };
 
   const series = [
@@ -61,25 +90,25 @@ const AreaCharts: React.FC<Props> = () => {
   ];
 
   return (
-    <DashboardContainer>
+    <BigDashboardContainer>
       <TooltipCard>
         <TooltipText>
-          <IconContainer>
-            <IoMdInformationCircleOutline id="icon" />
-          </IconContainer>
+          <IconBigContainer>
+            <IoMdInformationCircleOutline id="iconBigDash" />
+          </IconBigContainer>
         </TooltipText>
-        <TooltipBox>
+        <TooltipBoxBigDashboard>
           <h5>Dashboard em Áreas com dados de vendas totais e individuais</h5>
-        </TooltipBox>
+        </TooltipBoxBigDashboard>
       </TooltipCard>
       <ReactApexChart
         type="area"
         options={options}
         series={series}
-        height={350}
-        width={550}
+        width={1150}
+        height={450}
       />
-    </DashboardContainer>
+    </BigDashboardContainer>
   );
 };
 
