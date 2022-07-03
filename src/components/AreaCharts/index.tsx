@@ -43,7 +43,10 @@ const AreaCharts: React.FC<Props> = () => {
       style: {
         colors: ['var(--color-primary)', 'var(--color-secundary-light)']
       }
-    }
+    },
+    xaxis: {
+      categories: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul']
+    },
   };
 
   const series = [

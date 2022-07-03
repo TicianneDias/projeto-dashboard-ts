@@ -8,7 +8,7 @@ import {
   TooltipText
 } from '../../style/CommunsStyle';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
-import { ApexWrapper } from './style';
+// import { ApexWrapper } from './style';
 
 const LineChart: React.FC<Props> = () => {
   const options = {
@@ -29,6 +29,9 @@ const LineChart: React.FC<Props> = () => {
         }
       }
     }],
+    xaxis: {
+      categories: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul']
+    },
     chart: {
       width: '100%',
       height: 250,
@@ -37,24 +40,8 @@ const LineChart: React.FC<Props> = () => {
       },
       toolbar: {
         show: true,
-        offsetX: 30,
+        offsetX: 20,
         offsetY: 350,
-        tools: {
-          download: true,
-          selection: true,
-          zoom: true,
-          zoomin: true,
-          zoomout: true,
-          pan: true,
-          customIcons: [
-            {
-              icon: '🏠',
-              index: 4,
-              title: 'icon fofo',
-              class: 'icon-fofo'
-            }
-          ]
-        }
       }
     },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
@@ -89,7 +76,7 @@ const LineChart: React.FC<Props> = () => {
           <h5>Dashboard em Linhas com dados de vendas totais e individuais</h5>
         </TooltipBox>
       </TooltipCard>
-      <ApexWrapper>
+      {/* <ApexWrapper> */}
         <ReactApexChart
           type="line"
           options={options}
@@ -97,7 +84,7 @@ const LineChart: React.FC<Props> = () => {
           width={550}
           height={350}
         />
-      </ApexWrapper>
+      {/* </ApexWrapper> */}
     </DashboardContainer>
   );
 };

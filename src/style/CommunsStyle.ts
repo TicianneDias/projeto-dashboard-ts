@@ -81,6 +81,11 @@ export const TooltipBox = styled.div`
     top: -10px;
     position: absolute;
   }
+
+  @media(max-width: 612px) {
+        left: -50px;
+        top: -17px;
+    }
 `;
 
 export const TooltipCard = styled.div`

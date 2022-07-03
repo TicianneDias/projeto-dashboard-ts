@@ -20,6 +20,34 @@ const BarChart: React.FC<Props> = () => {
       }
     },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
+    chart: {
+      width: '100%',
+      zoom: {
+        enabled: true
+      },
+      toolbar: {
+        show: true,
+        offsetX: 20,
+        offsetY: 350,
+        tools: {
+          download: true,
+          selection: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+        }
+      }
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['var(--color-bg)', 'var(--color-secundary-light)']
+      }
+    },
+    xaxis: {
+      categories: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul']
+    },
     responsive: [{
       breakpoint: 612,
       options: {
@@ -29,18 +57,6 @@ const BarChart: React.FC<Props> = () => {
         }
       }
     }],
-    chart: {
-      width: '100%',
-      zoom: {
-        enabled: true
-      }
-    },
-    dataLabels: {
-      enabled: true,
-      style: {
-        colors: ['var(--color-bg)', 'var(--color-secundary-light)']
-      }
-    },
   };
 
   const series = [

@@ -34,11 +34,6 @@ const PieChart: React.FC<Props> = () => {
         chart: {
           width: '100%',
         },
-        // plotOptions: {
-        //   pie: {
-        //     customScale: 0.8,
-        //   }
-        // }
       }
     }],
   };
