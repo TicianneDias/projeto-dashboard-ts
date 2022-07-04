@@ -40,7 +40,7 @@ const LineChart: React.FC<Props> = () => {
       },
       toolbar: {
         show: true,
-        offsetX: 20,
+        offsetX: 10,
         offsetY: 350
       }
     },
@@ -77,8 +77,8 @@ const LineChart: React.FC<Props> = () => {
         type="line"
         options={options}
         series={series}
-        width={550}
         height={350}
+        width={390}
       />
     </DashboardContainer>
   );

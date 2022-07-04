@@ -78,7 +78,7 @@ const BarChart: React.FC<Props> = () => {
         options={options}
         series={series}
         height={350}
-        width={550}
+        width={390}
       />
     </DashboardContainer>
   );

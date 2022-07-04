@@ -7,7 +7,7 @@ export const DashboardContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 600px;
+    width: 400px;
     height: auto;
     padding: 15px;
     
@@ -36,7 +36,7 @@ export const IconContainer = styled.div`
     z-index: 999;
     cursor: pointer;
     top: 29px;
-    right: 190px;
+    right: 100px;
     
     #icon {
         color: var(--color-secundary);
@@ -73,7 +73,7 @@ export const TooltipText = styled.div`
 
 export const TooltipBox = styled.div`
   position: absolute;
-  top: -5px;
+  top: -25px;
   left: -170px;
   visibility: hidden;
   width: 180px;
