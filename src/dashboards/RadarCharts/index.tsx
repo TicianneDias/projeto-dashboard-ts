@@ -8,7 +8,6 @@ const RadarChart: React.FC<Props> = () => {
       colors: ['#9f040c6f', '#10244f7a']
     },
     chart: {
-      width: '100%',
       dropShadow: {
         enabled: true,
         blur: 4,

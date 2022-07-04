@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { TooltipBoxBigDashboard } from '../components/AreaCharts/style';
-import { TooltipBoxMixedContainer } from '../components/MixedContainer/style';
+import { TooltipBoxBigDashboard } from '../dashboards/AreaCharts/style';
+import { TooltipBoxMixedContainer } from '../dashboards/MixedContainer/style';
 
 export const DashboardContainer = styled.div`
     display: flex;

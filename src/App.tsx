@@ -1,25 +1,24 @@
-import BarChart from './components/BarCharts';
+import BarChart from './dashboards/BarCharts';
 import NavBar from './components/NavBar';
-import PieCharts from './components/PieCharts';
 import Global from './style/Global';
 import { AppContainer } from './style/CommunsStyle';
-import AreaCharts from './components/AreaCharts';
-import LineChart from './components/LineCharts';
-import LittleLineChart from './components/LittleLineChart';
-import RadarChart from './components/RadarCharts';
-import MixedContainer from './components/MixedContainer';
+import AreaCharts from './dashboards/AreaCharts';
+import LineChart from './dashboards/LineCharts';
+import MixedContainer from './dashboards/MixedContainer';
+import Filter from './components/Filter';
 
 function App() {
   return (
     <>
       <Global />
       <NavBar />
+      <Filter />
       <AreaCharts />
       <AppContainer>
         <BarChart />
         <LineChart />
-        <MixedContainer />
       </AppContainer>
+      <MixedContainer />
     </>
   );
 }

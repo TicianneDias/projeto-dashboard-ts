@@ -26,7 +26,7 @@ export const MixedContainerDashboards = styled.div`
     }
 
     @media(max-width: 534px) {
-        width: 370px;
+        width: 320px;
     }
 `;
 
@@ -73,6 +73,7 @@ export const TitleContainer = styled.div`
             color: var(--color-blue);
         }
     }
+    
 `;
 
 export const TooltipBoxMixedContainer= styled.div`
@@ -91,4 +92,9 @@ export const TooltipBoxMixedContainer= styled.div`
       top: -10px;
       position: absolute;
   }
+
+  @media(max-width: 630px) {
+        left: -155px;
+        top: -55px
+    }
 `;
