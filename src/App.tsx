@@ -6,7 +6,7 @@ import AreaCharts from './dashboards/AreaCharts';
 import LineChart from './dashboards/LineCharts';
 import MixedContainer from './dashboards/MixedContainer';
 import Filter from './components/Filter';
-import PieChartsCountry from './dashboards/PieChartsCountry'
+import PieChartsCountry from './dashboards/PieChartsCountry';
 import Title from './components/Title';
 
 function App() {
@@ -14,13 +14,13 @@ function App() {
     <>
       <Global />
       <NavBar />
-      <Title/>
+      <Title />
       <Filter />
       <AreaCharts />
       <AppContainer>
         <BarChart />
         <LineChart />
-        <PieChartsCountry/>
+        <PieChartsCountry />
       </AppContainer>
       <MixedContainer />
     </>

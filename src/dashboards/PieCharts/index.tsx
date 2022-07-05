@@ -11,10 +11,10 @@ const PieChart: React.FC<Props> = () => {
       }
     },
     stroke: {
-      show: false,
+      show: false
     },
     legend: {
-      position: 'bottom',
+      position: 'bottom'
     },
     responsive: [
       {

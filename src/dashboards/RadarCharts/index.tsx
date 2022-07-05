@@ -16,7 +16,7 @@ const RadarChart: React.FC<Props> = () => {
       },
       toolbar: {
         show: false
-      },
+      }
     },
     markers: {
       size: 0.7

@@ -27,10 +27,10 @@ const BarChart: React.FC<Props> = () => {
       },
       toolbar: {
         show: false
-      },
+      }
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
       // style: {
       //   colors: ['var(--color-bg)', 'var(--color-secundary-light)']
       // }

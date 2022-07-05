@@ -39,7 +39,7 @@ const LineChart: React.FC<Props> = () => {
         enabled: true
       },
       toolbar: {
-        show: false,
+        show: false
         // offsetX: 10,
         // offsetY: 350
       }
