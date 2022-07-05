@@ -8,7 +8,7 @@ export const FilterContainer = styled.div`
   align-items: center;
   margin-right: 35px;
   margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 45px;
   `;
 export const FilterButton = styled.button`
   background-color: var(--color-bg);
@@ -17,6 +17,7 @@ export const FilterButton = styled.button`
   border: 1px solid var(--color-primary);
   padding: 5px 10px;
   transition: all 0.4s ease-out;
+  font-size: 16px;
 
   &:hover {
     background-color: var(--color-primary);

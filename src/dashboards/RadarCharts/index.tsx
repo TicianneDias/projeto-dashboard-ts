@@ -21,6 +21,9 @@ const RadarChart: React.FC<Props> = () => {
     markers: {
       size: 0.7
     },
+    legend: {
+      show: false
+    },
     xaxis: {
       categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul']
     },

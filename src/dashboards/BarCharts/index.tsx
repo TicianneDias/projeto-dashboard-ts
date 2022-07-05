@@ -27,13 +27,13 @@ const BarChart: React.FC<Props> = () => {
       },
       toolbar: {
         show: false
-      }
+      },
     },
     dataLabels: {
-      enabled: true,
-      style: {
-        colors: ['var(--color-bg)', 'var(--color-secundary-light)']
-      }
+      enabled: false,
+      // style: {
+      //   colors: ['var(--color-bg)', 'var(--color-secundary-light)']
+      // }
     },
     xaxis: {
       categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul']

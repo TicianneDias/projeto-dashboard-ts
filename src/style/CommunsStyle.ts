@@ -58,7 +58,6 @@ export const AppContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
 
     @media(max-width: 1122px) {
@@ -74,7 +73,7 @@ export const TooltipText = styled.div`
 export const TooltipBox = styled.div`
   position: absolute;
   top: -25px;
-  left: -170px;
+  left: -190px;
   visibility: hidden;
   width: 180px;
   padding: 5px;

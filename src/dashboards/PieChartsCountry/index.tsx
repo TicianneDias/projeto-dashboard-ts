@@ -19,8 +19,14 @@ const PieChartCountry: React.FC<Props> = () => {
           color: 'var(--color-primary)'
         }
       },
-    colors: ['var(--color-primary)', 'var(--color-secundary-light)', 'var(--color-green)'],
-    labels: ['Portugal', 'EUA', 'Brasil'],
+    colors: ['var(--color-secundary)', 'var(--color-secundary-light)', 'var(--color-primary)'],
+    labels: ['Brasil', 'EUA', 'Portugal'],
+    stroke: {
+      show: false,
+    },
+    legend: {
+      position: 'bottom',
+    },
     options: {
       chart: {
         type: 'pie'
@@ -30,7 +36,7 @@ const PieChartCountry: React.FC<Props> = () => {
       {
         breakpoint: 612,
         options: {
-            labels: ['Portugal', 'EUA', 'Brasil'],
+          labels: ['Brasil', 'EUA', 'Portugal'],
           chart: {
             width: '100%'
           }
@@ -39,7 +45,7 @@ const PieChartCountry: React.FC<Props> = () => {
     ]
   };
 
-  const series = [98,107,52];
+  const series = [52,98,107];
 
   return (
     <DashboardContainer>

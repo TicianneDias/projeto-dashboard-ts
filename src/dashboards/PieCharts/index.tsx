@@ -10,6 +10,12 @@ const PieChart: React.FC<Props> = () => {
         type: 'pie'
       }
     },
+    stroke: {
+      show: false,
+    },
+    legend: {
+      position: 'bottom',
+    },
     responsive: [
       {
         breakpoint: 612,

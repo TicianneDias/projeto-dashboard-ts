@@ -12,7 +12,8 @@ const LittleLineChart: React.FC<Props> = () => {
         enabled: true
       }
     },
-    colors: ['var(--color-primary)', 'var(--color-secundary)'],
+    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'],
+    colors: ['var(--color-secundary-light)'],
     dataLabels: {
       enabled: false
     }

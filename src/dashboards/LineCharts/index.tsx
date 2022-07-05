@@ -39,14 +39,14 @@ const LineChart: React.FC<Props> = () => {
         enabled: true
       },
       toolbar: {
-        show: true,
-        offsetX: 10,
-        offsetY: 350
+        show: false,
+        // offsetX: 10,
+        // offsetY: 350
       }
     },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],
     dataLabels: {
-      enabled: true
+      enabled: false
     }
   };
 
