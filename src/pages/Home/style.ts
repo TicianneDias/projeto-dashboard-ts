@@ -13,9 +13,8 @@ export const LabelContainer = styled.div`
   flex-direction: row;
   position: absolute;
   right: 134px;
-  top: 153.8px;
-  border: 1px solid var(--color-primary);
-  padding: 7.7px;
+  top: 153.3px;
+  /* border: 1px solid var(--color-primary); */
   animation: ${myMove} 0.4s ease-out;
   
   label {
@@ -23,10 +22,19 @@ export const LabelContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-right: 1px solid var(--color-primary);
+    padding: 8px;
     gap: 5px;
     color: var(--color-secundary);
-  }
 
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      cursor: pointer;
+      transition: all 0.5s ease-out;
+    }
+  }
+  
   input {
     margin-right: 10px;
   }

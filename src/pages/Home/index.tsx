@@ -1,11 +1,11 @@
-import BarChart from "../dashboards/BarCharts";
-import { AppContainer } from "../style/CommunsStyle";
-import AreaCharts from "../dashboards/AreaCharts";
-import LineChart from "../dashboards/LineCharts";
-import MixedContainer from "../dashboards/MixedContainer";
-import Filter from "../components/Filter";
-import PieChartsCountry from "../dashboards/PieChartsCountry";
-import Title from "../components/Title";
+import BarChart from "../../dashboards/BarCharts";
+import { AppContainer } from "../../style/CommunsStyle";
+import AreaCharts from "../../dashboards/AreaCharts";
+import LineChart from "../../dashboards/LineCharts";
+import MixedContainer from "../../dashboards/MixedContainer";
+import Filter from "../../components/Filter";
+import PieChartsCountry from "../../dashboards/PieChartsCountry";
+import Title from "../../components/Title";
 import { useState } from "react";
 import { LabelContainer } from "./style";
 
