@@ -25,12 +25,6 @@ const Home = () => {
   const [showPie, setShowPie] = useState(true);
   const [showMixed, setShowMixed] = useState(true);
 
-  let dashboard = [];
-
-  if (localStorage) {
-    let dashboard = localStorage.getItem('dashboard');
-  }
-
   const handleClick = () => {
     setFilter(visible => !visible);
   };
@@ -75,25 +69,10 @@ const Home = () => {
     localStorage.setItem('dashboard', JSON.stringify(show));
   };
 
-  type newShow = {
-    show: object;
-    area: boolean;
-    bar: boolean;
-    line: boolean;
-    pie: boolean;
-    mixed: boolean;
-    filter: boolean;
-  };
-
+  const currentValue = JSON.stringify(show)
   useEffect(() => {
-    const show: newShow = JSON.parse(localStorage.getItem('dashboard') || '{}');
-    setShowArea(show.area);
-    setShowBar(show.bar);
-    setShowLine(show.line);
-    setShowPie(show.pie);
-    setShowMixed(show.mixed);
-    console.log(show);
-  }, []);
+    localStorage.setItem('dashboard', currentValue)
+  }, [currentValue])
 
   return (
     <>
