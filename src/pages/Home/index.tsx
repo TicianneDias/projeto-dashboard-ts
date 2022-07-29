@@ -18,109 +18,108 @@ const Home = () => {
     pie: true,
     mixed: true
   });
-  const [filter, setFilter] = useState(false);
-  const [showArea, setShowArea] = useState(true);
-  const [showBar, setShowBar] = useState(true);
-  const [showLine, setShowLine] = useState(true);
-  const [showPie, setShowPie] = useState(true);
-  const [showMixed, setShowMixed] = useState(true);
 
   const handleClick = () => {
-    setFilter(visible => !visible);
-  };
-  const handleClickArea = () => {
-    setShowArea(visible => !visible);
     setShow(prev => ({
       ...prev,
-      area: !showArea
+      filter: !show.filter
+    }));
+    
+  };
+  const handleClickArea = () => {
+    setShow(prev => ({
+      ...prev,
+      area: !show.area
     }));
     localStorage.setItem('dashboard', JSON.stringify(show));
   };
   const handleClickBar = () => {
-    setShowBar(visible => !visible);
     setShow(prev => ({
       ...prev,
-      bar: !showBar
+      bar: !show.bar
     }));
     localStorage.setItem('dashboard', JSON.stringify(show));
   };
   const handleClickLine = () => {
-    setShowLine(visible => !visible);
     setShow(prev => ({
       ...prev,
-      line: !showLine
+      line: !show.line
     }));
     localStorage.setItem('dashboard', JSON.stringify(show));
   };
   const handleClickPie = () => {
-    setShowPie(visible => !visible);
     setShow(prev => ({
       ...prev,
-      pie: !showPie
+      pie: !show.pie
     }));
     localStorage.setItem('dashboard', JSON.stringify(show));
   };
   const handleClickMixed = () => {
-    setShowMixed(visible => !visible);
     setShow(prev => ({
       ...prev,
-      mixed: !showMixed
+      mixed: !show.mixed
     }));
     localStorage.setItem('dashboard', JSON.stringify(show));
   };
 
+  
   const currentValue = JSON.stringify(show)
   useEffect(() => {
     localStorage.setItem('dashboard', currentValue)
-  }, [currentValue])
+  }, [show])
+
+  useEffect(() => {
+    setShow(JSON.parse(localStorage.getItem('dashboard')||'{}'))
+    console.log(JSON.parse(localStorage.getItem('dashboard')||'{}'))
+  }, [])
 
   return (
     <>
       <Title />
       <Filter onClick={() => handleClick()} />
-      {filter && (
+      {show.filter && (
         <LabelContainer>
           <label>
             <h6>Área</h6>
             <input
               type="checkbox"
               onClick={handleClickArea}
-              checked={showArea}
+              checked={show.area}
             />
           </label>
           <label>
             <h6>Barras</h6>
-            <input type="checkbox" onClick={handleClickBar} checked={showBar} />
+            <input type="checkbox" onClick={handleClickBar} checked={show.bar} />
           </label>
           <label>
             <h6>Linhas</h6>
             <input
               type="checkbox"
               onClick={handleClickLine}
-              checked={showLine}
+              checked={show.line}
             />
           </label>
           <label>
             <h6>Locais</h6>
-            <input type="checkbox" onClick={handleClickPie} checked={showPie} />
+            <input type="checkbox" onClick={handleClickPie} checked={show.pie} />
           </label>
           <label>
             <h6>Progresso</h6>
             <input
               type="checkbox"
               onClick={handleClickMixed}
-              checked={showMixed}
+              checked={show.mixed}
             />
           </label>
         </LabelContainer>
       )}
-      {showArea && <AreaCharts />}
+      {show.area && <AreaCharts />}
       <AppContainer>
-        {showBar && <BarChart />}
-        {showLine && <LineChart />}
-        {showPie && <PieChartsCountry />}
+        {show.bar && <BarChart />}
+        {show.line && <LineChart />}
+        {show.pie && <PieChartsCountry />}
       </AppContainer>
-      {showMixed && <MixedContainer />}
+      {show.mixed && <MixedContainer />}
     </>
   );
 };
