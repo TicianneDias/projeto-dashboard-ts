@@ -3,10 +3,10 @@ import { FilterButton, FilterContainer } from './style';
 import { TbFilter } from 'react-icons/tb';
 
 interface Props {
-  onClick: () => void
+  onClick: () => void;
 }
 
-const Filter: React.FC<Props> = ({onClick}) => {
+const Filter: React.FC<Props> = ({ onClick }) => {
   return (
     <FilterContainer>
       <FilterButton onClick={onClick}>

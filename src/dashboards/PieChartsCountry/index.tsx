@@ -68,6 +68,7 @@ const PieChartCountry: React.FC<Props> = () => {
       </TooltipCard>
       <ReactApexChart
         type="pie"
+        //@ts-ignore
         options={options}
         series={series}
         height={350}

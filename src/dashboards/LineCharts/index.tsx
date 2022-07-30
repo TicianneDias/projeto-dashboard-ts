@@ -40,8 +40,6 @@ const LineChart: React.FC<Props> = () => {
       },
       toolbar: {
         show: false
-        // offsetX: 10,
-        // offsetY: 350
       }
     },
     colors: ['var(--color-primary)', 'var(--color-secundary)'],

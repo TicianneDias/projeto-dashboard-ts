@@ -14,7 +14,6 @@ export const LabelContainer = styled.div`
   position: absolute;
   right: 134px;
   top: 153.3px;
-  /* border: 1px solid var(--color-primary); */
   animation: ${myMove} 0.4s ease-out;
   
   label {

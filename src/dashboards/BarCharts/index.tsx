@@ -31,9 +31,6 @@ const BarChart: React.FC<Props> = () => {
     },
     dataLabels: {
       enabled: false
-      // style: {
-      //   colors: ['var(--color-bg)', 'var(--color-secundary-light)']
-      // }
     },
     xaxis: {
       categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul']
