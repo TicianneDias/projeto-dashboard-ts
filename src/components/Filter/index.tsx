@@ -4,6 +4,7 @@ import { TbFilter } from 'react-icons/tb';
 
 interface Props {
   onClick: () => void;
+  disabled: any;
 }
 
 const Filter: React.FC<Props> = ({ onClick }) => {
