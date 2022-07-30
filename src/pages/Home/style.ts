@@ -8,6 +8,14 @@ const myMove = keyframes`
     100%{right: 125px; opacity: 0.8}
 `;
 
+const myMoveMobile = keyframes`
+    0% {right: 10px; opacity: 0.1}
+    30% {right: 20px; opacity: 0.3}
+    50% {right: 30px; opacity: 0.5}
+    70%{right: 40px; opacity: 0.6}
+    100%{right: 50px; opacity: 0.8}
+`;
+
 export const LabelContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -32,9 +40,21 @@ export const LabelContainer = styled.div`
       cursor: pointer;
       transition: all 0.5s ease-out;
     }
+
   }
   
   input {
     margin-right: 10px;
+  }
+
+  @media(max-width: 537px) {
+    right: 35px;
+    top: 190px;
+    animation: ${myMoveMobile} 0.4s ease-out;
+    label {
+      gap: 2px;
+      border-right: 1px solid var(--color-primary);
+      border-left: 1px solid var(--color-primary);
+    }
   }
 `;
