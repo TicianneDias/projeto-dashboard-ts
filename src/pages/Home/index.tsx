@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { LabelContainer } from './style';
 
 const Home = () => {
+  const [first, setFirst] = useState(true)
   const [show, setShow] = useState({
     filter: false,
     area: true,
@@ -19,58 +20,62 @@ const Home = () => {
     mixed: true
   });
 
+
   const handleClick = () => {
+    setFirst(false)
     setShow(prev => ({
       ...prev,
       filter: !show.filter
     }));
-    
   };
   const handleClickArea = () => {
+    setFirst(false)
     setShow(prev => ({
       ...prev,
       area: !show.area
     }));
-    localStorage.setItem('dashboard', JSON.stringify(show));
   };
-  const handleClickBar = () => {
+  const handleClickBar = async () => {
+    setFirst(false)
     setShow(prev => ({
       ...prev,
       bar: !show.bar
     }));
-    localStorage.setItem('dashboard', JSON.stringify(show));
   };
   const handleClickLine = () => {
+    setFirst(false)
     setShow(prev => ({
       ...prev,
       line: !show.line
     }));
-    localStorage.setItem('dashboard', JSON.stringify(show));
   };
   const handleClickPie = () => {
+    setFirst(false)
     setShow(prev => ({
       ...prev,
       pie: !show.pie
     }));
-    localStorage.setItem('dashboard', JSON.stringify(show));
   };
-  const handleClickMixed = () => {
+  const handleClickMixed = async() => {
+    setFirst(false)
+    console.log(show)
     setShow(prev => ({
       ...prev,
       mixed: !show.mixed
     }));
-    localStorage.setItem('dashboard', JSON.stringify(show));
   };
 
   
-  const currentValue = JSON.stringify(show)
   useEffect(() => {
-    localStorage.setItem('dashboard', currentValue)
+    if(!first){
+      localStorage.setItem('dashboard', JSON.stringify(show))
+    }
   }, [show])
 
   useEffect(() => {
-    setShow(JSON.parse(localStorage.getItem('dashboard')||'{}'))
-    console.log(JSON.parse(localStorage.getItem('dashboard')||'{}'))
+    if(localStorage.getItem('dashboard')){
+      setShow(JSON.parse(localStorage.getItem('dashboard')||'{}'))
+    }
   }, [])
 
   return (
