@@ -49,12 +49,15 @@ export const LabelContainer = styled.div`
 
   @media(max-width: 537px) {
     right: 35px;
-    top: 190px;
+    top: 184px;
     animation: ${myMoveMobile} 0.4s ease-out;
     label {
       gap: 2px;
-      border-right: 1px solid var(--color-primary);
       border-left: 1px solid var(--color-primary);
+      padding: 8px 1px;
+    }
+    input {
+      margin: 0 4px;
     }
   }
 `;
