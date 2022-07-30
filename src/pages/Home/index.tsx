@@ -8,8 +8,10 @@ import PieChartsCountry from '../../dashboards/PieChartsCountry';
 import Title from '../../components/Title';
 import { useEffect, useState } from 'react';
 import { LabelContainer } from './style';
+import Loading from '../../components/Loading';
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [first, setFirst] = useState(true);
   const [show, setShow] = useState({
     filter: false,
@@ -57,7 +59,6 @@ const Home = () => {
   };
   const handleClickMixed = async () => {
     setFirst(false);
-    console.log(show);
     setShow(prev => ({
       ...prev,
       mixed: !show.mixed
@@ -67,19 +68,21 @@ const Home = () => {
   useEffect(() => {
     if (!first) {
       localStorage.setItem('dashboard', JSON.stringify(show));
+      setIsLoading(false);
     }
   }, [show]);
 
   useEffect(() => {
     if (localStorage.getItem('dashboard')) {
       setShow(JSON.parse(localStorage.getItem('dashboard') || '{}'));
+      setIsLoading(false);
     }
   }, []);
 
   return (
     <>
       <Title />
-      <Filter onClick={() => handleClick()} />
+      <Filter onClick={() => handleClick()} disabled={isLoading} />
       {show.filter && (
         <LabelContainer>
           <label>
@@ -124,13 +127,19 @@ const Home = () => {
           </label>
         </LabelContainer>
       )}
-      {show.area && <AreaCharts />}
-      <AppContainer>
-        {show.bar && <BarChart />}
-        {show.line && <LineChart />}
-        {show.pie && <PieChartsCountry />}
-      </AppContainer>
-      {show.mixed && <MixedContainer />}
+      {!isLoading ? (
+        <>
+          {show.area && <AreaCharts />}
+          <AppContainer>
+            {show.bar && <BarChart />}
+            {show.line && <LineChart />}
+            {show.pie && <PieChartsCountry />}
+          </AppContainer>
+          {show.mixed && <MixedContainer />}
+        </>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };
