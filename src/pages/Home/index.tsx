@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { LabelContainer } from './style';
 
 const Home = () => {
-  const [first, setFirst] = useState(true)
+  const [first, setFirst] = useState(true);
   const [show, setShow] = useState({
     filter: false,
     area: true,
@@ -20,63 +20,61 @@ const Home = () => {
     mixed: true
   });
 
-
   const handleClick = () => {
-    setFirst(false)
+    setFirst(false);
     setShow(prev => ({
       ...prev,
       filter: !show.filter
     }));
   };
   const handleClickArea = () => {
-    setFirst(false)
+    setFirst(false);
     setShow(prev => ({
       ...prev,
       area: !show.area
     }));
   };
   const handleClickBar = async () => {
-    setFirst(false)
+    setFirst(false);
     setShow(prev => ({
       ...prev,
       bar: !show.bar
     }));
   };
   const handleClickLine = () => {
-    setFirst(false)
+    setFirst(false);
     setShow(prev => ({
       ...prev,
       line: !show.line
     }));
   };
   const handleClickPie = () => {
-    setFirst(false)
+    setFirst(false);
     setShow(prev => ({
       ...prev,
       pie: !show.pie
     }));
   };
-  const handleClickMixed = async() => {
-    setFirst(false)
-    console.log(show)
+  const handleClickMixed = async () => {
+    setFirst(false);
+    console.log(show);
     setShow(prev => ({
       ...prev,
       mixed: !show.mixed
     }));
   };
 
-  
   useEffect(() => {
-    if(!first){
-      localStorage.setItem('dashboard', JSON.stringify(show))
+    if (!first) {
+      localStorage.setItem('dashboard', JSON.stringify(show));
     }
-  }, [show])
+  }, [show]);
 
   useEffect(() => {
-    if(localStorage.getItem('dashboard')){
-      setShow(JSON.parse(localStorage.getItem('dashboard')||'{}'))
+    if (localStorage.getItem('dashboard')) {
+      setShow(JSON.parse(localStorage.getItem('dashboard') || '{}'));
     }
-  }, [])
+  }, []);
 
   return (
     <>
@@ -94,7 +92,11 @@ const Home = () => {
           </label>
           <label>
             <h6>Barras</h6>
-            <input type="checkbox" onClick={handleClickBar} checked={show.bar} />
+            <input
+              type="checkbox"
+              onClick={handleClickBar}
+              checked={show.bar}
+            />
           </label>
           <label>
             <h6>Linhas</h6>
@@ -106,7 +108,11 @@ const Home = () => {
           </label>
           <label>
             <h6>Locais</h6>
-            <input type="checkbox" onClick={handleClickPie} checked={show.pie} />
+            <input
+              type="checkbox"
+              onClick={handleClickPie}
+              checked={show.pie}
+            />
           </label>
           <label>
             <h6>Progresso</h6>

@@ -34,6 +34,7 @@ const PieChart: React.FC<Props> = () => {
   return (
     <ReactApexChart
       type="pie"
+      //@ts-ignore
       options={options}
       series={series}
       height={350}
