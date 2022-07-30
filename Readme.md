@@ -52,13 +52,13 @@ Para entrar no site colocado no Netlify, <a href='https://projeto-dashboard-ts.n
 <br> <br> <br>
 
 ## 💻 Tecnologias: <a id="tecnologias"></a>
+<code>Node v16.15.1</code>
 <ul>
-    <li><code>Node v16.15.1</code></li>
     <li>React</li>
     <li>ApexCharts</li>
     <li>Styled-Components</li>
     <li>Hooks: useState, useEffect</li>
-    <li>LocalStorage para os filtros (em fase de desenvolvimento)</li>
+    <li>LocalStorage para os filtros</li>
 </ul>
 
 
