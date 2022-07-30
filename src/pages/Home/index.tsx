@@ -64,18 +64,22 @@ const Home = () => {
       mixed: !show.mixed
     }));
   };
+  
+  const intervalLoad = () => {
+    setInterval(() => setIsLoading(false), 1050)
+  }
 
   useEffect(() => {
     if (!first) {
       localStorage.setItem('dashboard', JSON.stringify(show));
-      setIsLoading(false);
+      intervalLoad()
     }
   }, [show]);
 
   useEffect(() => {
     if (localStorage.getItem('dashboard')) {
       setShow(JSON.parse(localStorage.getItem('dashboard') || '{}'));
-      setIsLoading(false);
+      intervalLoad()
     }
   }, []);
 
