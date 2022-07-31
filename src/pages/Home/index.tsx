@@ -77,9 +77,9 @@ const Home = () => {
   }, [show]);
 
   useEffect(() => {
+    intervalLoad()
     if (localStorage.getItem('dashboard')) {
       setShow(JSON.parse(localStorage.getItem('dashboard') || '{}'));
-      intervalLoad()
     }
   }, []);
 
